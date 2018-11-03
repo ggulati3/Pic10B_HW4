@@ -21,6 +21,10 @@ int recurse(string big, string small, int index){
     }
 }
 
+int index_of(string s, string t){
+    return recurse(s, t, 0);
+}
+
 int main() {
     char answer = 'y';
     while(answer == 'y'){
@@ -31,7 +35,7 @@ int main() {
         getline(cin, full);
         cout << "Enter a string to search for: ";
         getline(cin, snippet);
-        int value = recurse(full, snippet, 0);
+        int value = index_of(full, snippet);
         if(value == -1){
             cout << "Not found!" << endl;
         } else {
